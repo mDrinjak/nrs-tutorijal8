@@ -1,0 +1,12 @@
+BEGIN TRANSACTION;
+CREATE TABLE IF NOT EXISTS "Gradovi" (
+	"id"	INTEGER PRIMARY KEY AUTOINCREMENT,
+	"naziv"	TEXT,
+	"broj_stanovnika"	INTEGER
+);
+INSERT INTO "Gradovi" VALUES (1,'Sarajevo',50000);
+INSERT INTO "Gradovi" VALUES (2,'Banja Luka',40000);
+INSERT INTO "Gradovi" VALUES (3,'Mostar',30000);
+INSERT INTO "Gradovi" VALUES (4,'Visoko',20000);
+INSERT INTO "Gradovi" VALUES (5,'Kiseljak',10000);
+COMMIT;
