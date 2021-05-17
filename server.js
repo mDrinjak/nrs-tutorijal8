@@ -17,9 +17,9 @@ app.get('/', (req, res) => {
 })
 
 app.get('/gradovi', (req, res) => baza.gradovi.findAll().then(gradovi => res.json(gradovi)));
-app.get('/gradovi/:id ', (req, res) => baza.gradovi.findOne({
-    where: { id: req.params.id }
-}).then(data => { res.send(data) }));
+app.get('/gradovi/:id' , (req, res) =>  baza.gradovi.findOne({
+    where: {   id: req.params.id }}).then( data => { res.send(data) })   
+);
 
 app.delete('/gradovi:id', (req, res) => baza.gradovi.destroy({
     where: { id: req.params.id }
@@ -40,6 +40,7 @@ app.put('/gradovi/:id', function (req, res) {
         broj_stanovnika: v.broj_stanovnika,
     }, { where: { id: req.params.id } }).then(() => { res.json({ status: 'Updated!' }) })
 });
-app.listen(port, () => {
+var server=app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
 })
+module.exports = server
