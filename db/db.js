@@ -4,7 +4,7 @@ const Sequelize = require('sequelize');
 const path = require('path')
 const sequelize = new Sequelize({
   dialect: 'sqlite',
-  storage: './db.db'
+  storage: './db/db.db'
 });
 
 const db = {};

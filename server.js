@@ -21,7 +21,7 @@ app.get('/gradovi/:id' , (req, res) =>  baza.gradovi.findOne({
     where: {   id: req.params.id }}).then( data => { res.send(data) })   
 );
 
-app.delete('/gradovi:id', (req, res) => baza.gradovi.destroy({
+app.delete('/gradovi/:id', (req, res) => baza.gradovi.destroy({
     where: { id: req.params.id }
 }).then(() => { res.json({ status: 'Deleted' }) }));
 

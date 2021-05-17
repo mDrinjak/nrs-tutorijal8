@@ -58,7 +58,7 @@ describe('Testiranje servera', function () {
         it('it should PUT a gradovi given the id', (done) => {
             chai.request(app)
                 .put('/gradovi/' + grad.id)
-                .send({ naziv: "John", broj_stanovnika: "999412" })
+                .send({ naziv: "Kiseljak", broj_stanovnika: "999412" })
                 .end((err, res) => {
                     res.should.have.status(200);
                     res.body.should.be.a('object');
